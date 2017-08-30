@@ -32,6 +32,38 @@ JavaScript runs where it is found in the html.
 
 ## 2. Basic JavaScript Instructions
 
+Comments are same as C++.
+
+Declare the variable:
+
+    var variableName = 3;
+
+Until you have assigned a value to a variable, programmers say the value is *undefined*. Technically, *undefined* is a data type like a number, string, or Boolean.
+
+JavaScript distinguishes between numbers, strings, and *true* or *false* values known as Booleans. In addition to these three data types, JavaScript also has others (arrays, objects, undefined, and null). Unlike some other programming languages, when declaring a variable in JavaScript, you do not need to specify what type of data it will hold.
+
+The string data type is enclosed within a pair of quotes. These can be single or double quotes, but the opening quote must match the closing quote.
+
+Escaping: using a backwards slash (or "backslash", i.e., "\") before any type of quote mark that appears within a string.
+
+The values in the array do not need to be the same data type.
+
+The array literal (shown in the first code sample) is preferred over the array constructor when creating arrays.
+
+* array literal
+
+        var a = ['hello', 2, true];
+        a[0];
+
+* array constructor
+
+        var a = new Array('hello', 2, true);
+        a.item(0);
+    
+Each array has a property called *length*, which holds the number of items in the array.
+
+    var l = a.length;
+
 ## 3. Functions, Methods & Objects
 
 ## 4. Decisions & Loops
