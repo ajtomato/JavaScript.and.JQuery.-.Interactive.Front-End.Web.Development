@@ -66,6 +66,116 @@ Each array has a property called *length*, which holds the number of items in th
 
 ## 3. Functions, Methods & Objects
 
+Function declaration
+
+    function functionName(parameter1, parameter2) {
+        return parameter1 + parameter2;
+    }
+    var v = functionName(1, 2);
+
+Functions can return more than one value using an array.
+
+If you put a function where the interpreter would expect to see an expression, then it is treated as an expression, and it is known as a *function expression*. In function expressions, the name is usually omitted. A function with no name is called an *anonymous function*.
+
+    var area = function(width, height) {
+        return width * height;
+    };
+    var size = area(3, 4);
+
+IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE)
+
+    var area = (function() {
+        var width = 3;
+        var height = 2;
+        return width * height;
+    }());
+
+Anonymous function expressions and IIFEs are used for code that only needs to run once within a task, rather than repeatedly being called by other parts of the script.
+
+* As an argument when a function is called (to calculate a value for that function).
+* To assign the value of a property to an object.
+* In event handlers and listeners to perform a task when an event occurs.
+* To prevent conflicts between two scripts that might use the same variable names.
+
+If you create a variable outside of a function, then it can be used anywhere within the script. It is called a *global* variable and has *global scope*.
+
+The same value can be used with more than one variable. The following value is shared by two variables.
+
+    var isWall = true;
+    var canPaint = true;
+
+Creating an object: literal notation
+
+    var hotel = {
+        name: 'Park',
+        roomRate: 240, // Amount in dollars
+        discount: 15,  // Percentage discount
+        offerPrice: function() {
+            var offerRate = this.roomRate * ((100 - this.discount) / 100);
+            return offerRate;
+        }
+    };
+
+You can also access the properties of an object (but not its methods) using square bracket syntax.
+
+    var hotelName = hotel['name'];
+
+The *new* keyword and the object constructor create a blank object. You can then add properties and methods to the object.
+
+    var v1 = new Ojbect();
+    var v2 = {}
+    v1.name = 'Hello'
+    delete v1.name;
+
+Object constructor:
+
+    function Hotel(name, rooms, booked) {
+        this.name = name;
+        this.rooms = rooms;
+        this.booked = booked;
+        this.checkAvailability = function() {
+            return this.rooms - this.booked;
+        };
+    }
+    var quayHotel = new Hotel('Quay', 40, 25);
+
+The name of a constructor function usually begins with a capital letter (unlike other functions, which tend to begin with a lowercase character).
+
+Under the hood, the *this* keyword is a reference to the object that the function is created inside.
+
+When a function is created at the top level of a script (that is, not inside another object or function), then it is in the *global scope* or *global context*. The default object in this context is the *window* object. so when *this* is used inside a function in the *global context* it refers to the *window* object.
+
+If a named function has been defined in global scope, and it is then used as a method of an object, *this* refers to the object it is contained within.
+
+Another scenario to mention is when one function is nested inside another function, but the value of *this* can vary (depending on which browser you are using). You could work around this by storing the value of *this* in a variable in the first function and using the variable name in child functions instead of this.
+
+If the *var* keyword is not used, the variable is declared in *global scope* (you should always use it).
+
+The Browser Object Model creates a model of the browser tab or window.
+
+    window: current browser window or tab
+      |
+      +----- document: current web page
+      |
+      +----- history: pages in browser history
+      |
+      +----- location: url of current page
+      |
+      +----- navigator: information about browser
+      |
+      +----- screen: device's display information
+
+In JavaScript there are six data types:
+
+1. String
+2. Number
+3. Boolean
+4. Undefined: a variable that has been declared, but no value has been assigned to it yet
+5. Null: a variable with no value - it may have had one at some point, but no longer has a value
+6. Object
+
+Undefined and null values do not have objects.
+
 ## 4. Decisions & Loops
 
 ## 5. Document Object Model
