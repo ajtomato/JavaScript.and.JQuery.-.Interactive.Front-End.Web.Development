@@ -178,6 +178,14 @@ Undefined and null values do not have objects.
 
 ## 4. Decisions & Loops
 
+String can use ==, <, or > directly.
+
+Strict equal to: ===, compares two values to check that both the data type and value are the same.
+
+Strict not equal to: !==, compares two values to check that both the data type and value are not the same.
+
+Data types can be coerced from one type to another.
+
 ## 5. Document Object Model
 
 ## 6. Events
