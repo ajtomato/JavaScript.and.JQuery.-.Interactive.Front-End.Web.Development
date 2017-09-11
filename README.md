@@ -188,6 +188,59 @@ Data types can be coerced from one type to another.
 
 ## 5. Document Object Model
 
+The DOM is neither part of HTML, nor part of JavaScript; it is a separate set of rules. It is implemented by all major browser makers, and covers two primary areas:
+
+1. Making a model of the html page
+2. Accessing and changing the html page
+
+DOM is stored in the browser's memory. It consists of four main types of nodes.
+
+* document node: the root of DOM tree
+* element node: html element
+* attribute node: a part of element which carries the html element attribute
+* text node: the text in the element
+
+DOM queries
+
+* Select an individual element node
+    * getElementById()
+    * querySelector(): use a CSS selector, and return the first matching element
+* Select multiple elements
+    * getElementsByClassName()
+    * getElementsByTagName()
+    * querySelectorAll()
+* Traverse between element nodes
+    * parentNode
+    * previousSibling/nextSibling
+    * firstChild/lastChild
+
+DOM methods can also be used on element nodes within the page to find descendants of that node.
+
+Live & static nodelists:
+
+* In a live Nodelist, when your script updates the page, the Nodelist is updated at the same time. The methods beginning *getElementsBy_* return live Node lists.
+* In a static Nodelist when your script updates the page, the NodeList is not updated to reflect the changes made by the script. The new methods that begin *querySe1ector_* (which use CSS selector syntax) return static Nodelists.
+
+Traversing the DOM can be difficult because some browsers add a text node whenever they come across whitespace between elements.
+
+Get/update element content:
+
+* *nodeValue*: access & update a text node with *nodeValue*
+* *textContent*: the *textContent* property allows you to collect or update just the text that is in the containing element (and its children). The update will also include any markup.
+* *innerHTML*: *innerHTML* is used both to retrieve and update content. To update an element, new content is provided as a string. It can contain markup for descendant elements.
+
+DOM manipulation
+
+* createElement()
+* createTextNode()
+* appendChild()
+* insertBefore()
+* removeChild()
+* getAttribute()
+* hasAttribute()
+* setAttribute()
+* removeAttribute()
+
 ## 6. Events
 
 ## 7. jQuery
