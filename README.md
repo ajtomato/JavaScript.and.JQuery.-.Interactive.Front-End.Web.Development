@@ -243,6 +243,97 @@ DOM manipulation
 
 ## 6. Events
 
+UI events
+
+* load: Web page has finished loading
+* unload: Web page is unloading (usually because a new page was requested)
+* error: Browser encounters a JavaScript error or an asset doesn't exist
+* resize: Browser window has been resized
+* scroll: User has scrolled up or down the page
+
+Keyboard events
+
+* keydown: User first presses a key (repeats while key is depressed)
+* keyup: User releases a key
+* keypress: Character is being inserted (repeats while key is depressed)
+
+Mouse events
+
+* click: User presses and releases a button over the same element
+* dbclick: User presses and releases a button twice over the same element
+* mousedown: User presses a mouse button while over an element
+* mouseup: User releases a mouse button while over an element
+* mousemove: User moves the mouse (not on a touchscreen)
+* mouseover: User moves the mouse over an element (not on a touchscreen)
+* mouseout: User moves the mouse off an element (not on a touchscreen)
+
+Focus events
+
+* focus/focusin: Element gains focus
+* blur/focusout: Element loses focus
+
+Form events
+
+* input: Value in any \<input\> or \<textarea\> element has changed (IE9+) or any element with the contented i table attribute
+* change: Value in select box, checkbox, or radio button changes ( IE9+)
+* submit: User submits a form (using a button or a key)
+* reset: User clicks on a form's reset button (rarely used these days)
+* cut: User cuts content from a form field
+* copy: User copies content from a form field
+* paste: User pastes content into a form field
+* select: User selects some text in a form field
+
+Mutation events: Occur when the DOM structure has been changed by a script. To be replaced by mutation observers.
+
+* DOMSubtreeModified: Change hc;is been made to document
+* DOMNodeInserted: Node has been inserted as a direct child of another node
+* DOMNodeRemoved: Node has been removed from another node
+* DOMNodeInsertedIntoDocument: Node has been inserted as a descendant of another node
+* DOMNodeRemovedFromDocument: Node has been removed as a descendant of another node
+
+Event handling
+
+1. Select the *element* node(s) you want the script to respond to.
+2. Indicate which *event* on the selected node(s) will trigger the response.
+3. State the *code* you want to run when the event occurs.
+
+Three ways to bind an event to an element
+
+1. Html event handlers: html specifies the event attribute as *onevent*, e.g., *onclick*
+2. Traditional DOM event handlers: *element.onevent = functionname*;
+3. DOM level 2 event listeners: element.addEventListener('event', functionname[, Boolean: event flow]), the last parameter is usually set to *false*.
+
+HTML elements nest inside other elements. If you hove or click on a link, you will also be hovering or clicking on its parent elements. The order in which the events fire is known as *event flow*, and events flow in two directions.
+
+* event bubbling: the event starts at the most specific node and flows outwards to the least specific one. This is the default type of event flow, i.e., *event flow = false*.
+* event capturing: the event starts at the least specific node and flows inwards to the most specific one, i.e., *event flow = true*.
+
+The Event Object:
+
+* event listener with no parameter
+
+        function checkUserName(e) {
+            var target = e.target;
+        }
+        var el = document.getElementById('username');
+        el.addEventListener('blur', checkUserName, false);
+
+* event listener with parameters
+
+        function checkUserName(e, minLength) {
+            var target = e.target;
+        }
+        var el = document.getElementById('username');
+        el.addEventListener('blur', function(e) { checkUserName(e, 5); }, false);
+
+Event delegation: you can place event handlers on a containing element and use the event object's *target* property to find which of its children the event happened on.
+
+HTML5 events
+
+* DOMContentLoaded: Event fires when the DOM tree is formed (images, CSS, and JavaScript might still be loading).Scripts start to run earlier than using the load event which waits for other resources such as images and advertisements to load.
+* hashchange: Event fires when the URL hash changes (without the entire window refreshing). Hashes are used on links to specific parts (sometimes known as anchors) within a page and also on pages that use AJAX to load content.
+* beforeun load: Event fires on the window object before the page is unloaded. It should only be used to help the user (not to encourage them to stay on a website if they are trying to leave).
+
 ## 7. jQuery
 
 ## 8. Ajax & JSON
