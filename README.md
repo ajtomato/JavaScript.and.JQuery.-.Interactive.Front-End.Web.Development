@@ -336,6 +336,34 @@ HTML5 events
 
 ## 7. jQuery
 
+jQuery offers a simple way to achieve a variety of common JavaScript tasks quickly and consistently, across all major browsers and without any fallback code needed.
+
+When you select one or more elements, a jQuery object is returned. It is also known as a *matched set* or a *jQuery selection*.
+
+If a jQuery selection holds more than one element, and a method is used to get information from the selected elements, it will retrieve information from only the first element in the matched set.
+
+When you want to get information from a series of elements, you can use the *.each()* method rather than writing a loop.
+
+If a jQuery selection holds more than one element, and a method is used to update information on the page, it will update all of the elements in the matched set, not just the first one.
+
+When a variable contains a jQuery object, it is often given a name beginning with the $ symbol (to help differentiate it from other variables in your script).
+
+The process of placing several methods in the same selector is referred to as *chaining*.
+
+    $('li[id!="one"]').hide().delay(5OO).fadeIn(1400);
+
+Most methods used to update the jQuery selection can be chained. However the methods that retrieve information from the DOM (or about the browser) cannot be chained.
+
+Check a page is ready to work with
+
+    $(document).ready(function() { // When a page is ready, the function is run. });
+    $(function() { // A shortcut for the above statement } );
+
+$(this) places that element in a new jQuery object so that you can use jQuery methods on it.
+
+It is better to change the value of a class attribute (to trigger new CSS rules in the style
+sheet) rather than to change CSS properties from within the JavaScript file itself.
+
 ## 8. Ajax & JSON
 
 ## 9. APIs
