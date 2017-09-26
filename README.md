@@ -219,7 +219,7 @@ DOM methods can also be used on element nodes within the page to find descendant
 Live & static nodelists:
 
 * In a live Nodelist, when your script updates the page, the Nodelist is updated at the same time. The methods beginning *getElementsBy_* return live Node lists.
-* In a static Nodelist when your script updates the page, the NodeList is not updated to reflect the changes made by the script. The new methods that begin *querySe1ector_* (which use CSS selector syntax) return static Nodelists.
+* In a static Nodelist when your script updates the page, the NodeList is not updated to reflect the changes made by the script. The new methods that begin *querySelector_* (which use CSS selector syntax) return static Nodelists.
 
 Traversing the DOM can be difficult because some browsers add a text node whenever they come across whitespace between elements.
 
